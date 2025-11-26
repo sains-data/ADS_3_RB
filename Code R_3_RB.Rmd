@@ -1,0 +1,54 @@
+---
+title: "TUBES ADS"
+author: "avi"
+date: "2025-11-25"
+output: html_document
+---
+
+```{r}
+library(readxl)
+library(dplyr)
+library(ggplot2)
+
+df <- read_excel("C:/Users/A c e r/Downloads/dataset nilai ads.xlsx")
+df <- df %>% mutate(across(everything(), as.numeric))
+
+# Pakai kolom berdasarkan index (AMAN)
+RA <- df[[1]]
+RB <- df[[2]]
+RC <- df[[3]]
+
+nilai <- c(RA, RB, RC)
+nilai <- nilai[!is.na(nilai)]
+
+summary(nilai)
+sd(nilai)
+
+set.seed(123)
+sampling_means <- replicate(10000, mean(sample(nilai, size = 30, replace = TRUE)))
+
+mean_sampling <- mean(sampling_means)
+se_sampling <- sd(sampling_means)
+
+hist(sampling_means,
+     main = "Distribusi Sampling Rata-rata Nilai ADS",
+     xlab = "Rata-rata Sampel",
+     col = "lightblue")
+
+boxplot(nilai,
+        main = "Boxplot Nilai ADS (Semua Mahasiswa)",
+        ylab = "Nilai Akhir",
+        col = "lightgreen")
+
+n <- length(nilai)
+mean_x <- mean(nilai)
+sd_x <- sd(nilai)
+se_x <- sd_x / sqrt(n)
+
+lower <- mean_x - 1.96 * se_x
+upper <- mean_x + 1.96 * se_x
+
+cat("CI 95% =", lower, "sampai", upper, "\n")
+
+```
+
