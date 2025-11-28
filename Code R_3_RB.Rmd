@@ -1,6 +1,6 @@
 ---
 title: "TUBES ADS"
-author: "avi"
+author: "Kelompok 3 RB"
 date: "2025-11-25"
 output: html_document
 ---
@@ -51,4 +51,5 @@ upper <- mean_x + 1.96 * se_x
 cat("CI 95% =", lower, "sampai", upper, "\n")
 
 ```
+
 
