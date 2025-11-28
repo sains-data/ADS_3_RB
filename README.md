@@ -11,7 +11,7 @@ Distribusi sampling digunakan untuk memahami kestabilan nilai dan menilai kemamp
 # Variabel
 - Nilai akhir mahasiswa kelas RA, RB, dan RC
 - Distribusi sampling rata‑rata nilai
-- Ukuran sampel (n = 30, 1000 kali pengambilan)
+- Ukuran sampel (n = 30, 10000 kali pengambilan)
 
 # Metode
 Analisis Deskriptif, Eksplorasi Data, Distribusi Sampling Rata-rata, dan Selang Kepercayaan 95%.
